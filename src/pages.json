@@ -7,27 +7,21 @@
 			}
 		},
 		{
-			"path": "pages/index2/index2",
+			"path": "pages/Answer/index",
 			"style": {
 				"navigationBarTitleText": "答疑星球"
 			}
 		},
 		{
-			"path": "pages/index3/index3",
+			"path": "pages/index3/index",
 			"style": {
 				"navigationBarTitleText": "话题论坛"
 			}
 		},
 		{
-			"path": "pages/index4/index4",
+			"path": "pages/PersonalCenter/index",
 			"style": {
 				"navigationBarTitleText": "我的"
-			}
-		},
-		{
-			"path": "pages/index5/search",
-			"style": {
-				"navigationBarTitleText": "搜索"
 			}
 		}
 	],
@@ -37,22 +31,22 @@
 		"borderStyle": "white",
 		"list": [
 		  {
-			"iconPath": "/static/首页.png",
+			"iconPath": "/static/images/首页.png",
 			"pagePath": "pages/index/index",
 			"text": "首页"
 		  },
 		  {
-			"iconPath": "/static/答疑.png",
+			"iconPath": "/static/images/答疑.png",
 			"pagePath": "pages/index5/search",
 			"text": "答疑星球"
 		  },
 		  {
-			"iconPath": "/static/论坛.png",
+			"iconPath": "/static/images/论坛.png",
 			"pagePath": "pages/index3/index3",
 			"text": "话题论坛"
 		  },
 		  {
-			"iconPath": "/static/我的.png",
+			"iconPath": "/static/images/我的.png",
 			"pagePath": "pages/index4/index4",
 			"text": "我的"
 		  }

@@ -1,6 +1,7 @@
 <template>
-	<div>
-		wode 
+	<div class="container">
+		<div class="wrapper">
+		</div> 
 	</div>
 </template>
 
@@ -14,6 +15,10 @@
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.container {
+	.wrapper{ 
+		background-color: #fff;
+	}
+}
 </style>
