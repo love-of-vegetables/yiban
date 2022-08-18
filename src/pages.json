@@ -1,5 +1,17 @@
 {
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+		}
+	},
 	"pages": [ 
+		{
+			"path": "pages/PersonalCenter/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
 		{
 			"path": "pages/index/index",
 			"style": {
@@ -19,9 +31,35 @@
 			}
 		},
 		{
-			"path": "pages/PersonalCenter/index",
+			"path": "pages/PersonalCenter/Article/index",
 			"style": {
-				"navigationBarTitleText": "我的"
+				"navigationBarTitleText": "我的帖子",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/PersonalCenter/History/index",
+			"style": {
+				"navigationBarTitleText": "历史记录",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/PersonalCenter/MyLike/index",
+			"style": {
+				"navigationBarTitleText": "我的收藏"
+			}
+		},
+		{
+			"path": "pages/PersonalCenter/Profile/index",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path": "pages/PersonalCenter/Profile/editInfo/index",
+			"style": {
+				"navigationBarTitleText": "修改信息"
 			}
 		}
 	],
@@ -37,25 +75,25 @@
 		  },
 		  {
 			"iconPath": "/static/images/answer.png",
-			"pagePath": "pages/index5/search",
+			"pagePath": "pages/Answer/index",
 			"text": "答疑星球"
 		  },
 		  {
 			"iconPath": "/static/images/forum.png",
-			"pagePath": "pages/index3/index3",
+			"pagePath": "pages/index3/index",
 			"text": "话题论坛"
 		  },
 		  {
 			"iconPath": "/static/images/user.png",
-			"pagePath": "pages/index4/index4",
+			"pagePath": "pages/PersonalCenter/index",
 			"text": "我的"
 		  }
 		]		
 	},
 	"globalStyle": {
-		"navigationBarTextStyle": "blue",
+		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#f7f7f7"
 	}
 }
