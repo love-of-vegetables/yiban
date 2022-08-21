@@ -34,13 +34,13 @@
 			}
 		},
 		{
-			"path": "pages/index/index",
+			"path": "pages/Home/index",
 			"style": {
 				"navigationBarTitleText": "首页"
 			}
 		},
 		{
-			"path": "pages/index3/index",
+			"path": "pages/Forum/index",
 			"style": {
 				"navigationBarTitleText": "话题论坛"
 			}
@@ -85,7 +85,7 @@
 		"list": [
 		  {
 			"iconPath": "/static/images/home.png",
-			"pagePath": "pages/index/index",
+			"pagePath": "pages/Home/index",
 			"text": "首页"
 		  },
 		  {
@@ -95,7 +95,7 @@
 		  },
 		  {
 			"iconPath": "/static/images/forum.png",
-			"pagePath": "pages/index3/index",
+			"pagePath": "pages/Forum/index",
 			"text": "话题论坛"
 		  },
 		  {
