@@ -1,48 +1,141 @@
 <template>
-<!-- 顶部搜索框实现 -->
-<view id="searchOuterView">
-   <!-- <view id="searchInnerView">
-    <image src="../../static/搜索.png"></image>
-    <text> 搜索</text>
-  </view> -->
-</view>
+  <view class="container">
+    <view class="search-bar-wrapper">
+      <uni-search-bar cancelButton="none"
+                      clearButton="none"
+                      v-model="keyword"
+                      @focus="focus"
+                      radius="50"
+                      placeholder="输入关键词搜索"
+                      bgColor="rgb(246,246,246)"
+                      class="search-bar">
+      </uni-search-bar>
+    </view>
+    <view class="articles"
+          v-for="(item, index) in articles"
+          :key="index"
+          @click="goInto(item.id)">
+      <view class="header">
+        <image class="avatar"
+               src="../../static/images/textImages/avatar.png"></image>
+        <view class="header-right">
+          <view class="author">{{item.author}}</view>
+          <view class="publishDate">{{getDateFrom(item.publishDate)}}</view>
+        </view>
+      </view>
+      <view class="content">{{item.content}}</view>
+      <view class="footer">
+        <view class="footer-item"><text class="t-icon t-icon-fenxiang1 icon"></text><text>{{item.share}}</text></view>
+        <view class="footer-item"><text class="t-icon t-icon-pinglun icon"></text><text>{{item.comment}}</text></view>
+        <view class="footer-item"><text class="t-icon t-icon-zan icon"></text><text>{{item.like}}</text></view>
+      </view>
+    </view>
+    <view class="edit">
+      <uni-icons type="plusempty"
+                 size="40"
+                 class="editIcon"
+                 @click="gotoEdit"></uni-icons>
+    </view>
+  </view>
 </template>
 
 <script>
-	
-	export default{
-		data(){
-			return{
-
-		}
-	}
+import { getDate } from '@/utils/getDate.js'
+export default {
+  data () {
+    return {
+      keyword: '',
+      articles: [
+        {
+          id: 1,
+          author: 'Qcsa',
+          publishDate: new Date(),
+          content: 'Content',
+          share: 10,
+          comment: 112,
+          like: 98
+        }
+      ]
+    }
+  },
+  methods: {
+    input (res) {
+      console.log('----input:', res)
+    },
+    getDateFrom (date) {
+      return getDate(date)
+    },
+    gotoEdit () {
+      uni.navigateTo({
+        url: '/pages/Answer/edit/index',
+        animationType: 'pop-in',
+        animationDuration: 200
+      })
+    },
+    goInto (id) {
+      uni.navigateTo({
+        url: '/components/Post/index',
+        animationType: 'pop-in',
+        animationDuration: 200
+      })
+    }
+  }
 }
 </script>
 
-<style>
-/* 顶部搜索框样式 */
-#searchOuterView{
-  padding: 15rpx;
-}
- 
-#searchInnerView{
-  text-align: center;
-  width: 720rpx;
-  height: 58rpx;
-  background: #f5f5f5;
-  border:2rpx solid #ECECEE;
-  border-radius: 8rpx;
-  line-height: 52rpx;
-  box-sizing: border-box;
-}
- 
-#searchInnerView > image{
-  width: 32rpx;
-  height: 32rpx;
-  vertical-align: middle;
-}
-#searchInnerView > text{
-  font-size:24rpx ;
-  color: #B2B2B2;
+<style lang="scss" scoped>
+@import "@/iconfont/iconfont-weapp-icon.css";
+@import "@/static/style/common.scss";
+.container {
+  position: relative;
+  .search-bar-wrapper {
+    padding: 12rpx 0;
+    background-color: #fff;
+  }
+  .articles {
+    width: 90%;
+    margin: 20rpx auto 0;
+    padding: 20rpx 20rpx 30rpx;
+    box-shadow: 0 10rpx 4rpx 10rpx rgba(211, 211, 211, 0.1);
+    background-color: #fff;
+    .header {
+      display: flex;
+      .avatar {
+        width: $avatarSize;
+        height: $avatarSize;
+        border-radius: 50%;
+      }
+      .header-right {
+        margin-left: 24rpx;
+        font-size: 36rpx;
+        align-self: center;
+      }
+    }
+    .content {
+      min-height: 80rpx;
+      margin: 20rpx 0;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 34rpx;
+      color: lightslategray;
+      .footer-item {
+        height: 50rpx;
+        line-height: 50rpx;
+        .icon {
+          transform: translate(-6rpx, 6rpx);
+        }
+      }
+    }
+  }
+  .edit {
+    position: fixed;
+    bottom: 160rpx;
+    right: 24rpx;
+    border-radius: 50%;
+    border: 6rpx solid rgba(63, 62, 62, 0.9);
+    background: burlywood;
+  }
 }
 </style>

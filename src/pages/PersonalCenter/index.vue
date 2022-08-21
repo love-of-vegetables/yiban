@@ -88,7 +88,7 @@ export default {
     .image {
       width: $avatarSize;
       height: $avatarSize;
-      border-radius: 10rpx;
+      border-radius: 50%;
     }
     .login {
       height: $avatarSize;
