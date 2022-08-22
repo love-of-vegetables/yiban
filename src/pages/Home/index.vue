@@ -13,14 +13,20 @@
 
 	<view class="index_bigType">
 		<view class="bigTypeRow">
-			<navigator  v-for="(item,index) in bigTypeRow_1" :key="index">
-			<image mode="widthFix" v-bind:src="item.url" />
-      </navigator>
+			<view  v-for="(item,index) in bigTypeRow_1" :key="index">
+				<navigator v-bind:url="item.nexturl">
+				<image mode="widthFix" v-bind:src="item.url" ></image>
+				<button size="mini" plain="true">{{item.name}}</button>
+				</navigator>
+			</view>
 		</view>
-    <view class="bigTypeRow">
-			<navigator  v-for="(item,index) in bigTypeRow_2" :key="index">
-			<image mode="widthFix" v-bind:src="item.url" />
-      </navigator>
+    	<view class="bigTypeRow">
+			<view  v-for="(item,index) in bigTypeRow_2" :key="index">
+				<navigator v-bind:url="item.nexturl">
+				<image mode="widthFix" v-bind:src="item.url" ></image>
+				<button size="mini" plain="true">{{item.name}}</button>
+				</navigator>
+			</view>
 		</view>
 	</view>
 
@@ -28,11 +34,13 @@
     <view class="Title">近期文章</view>
     <view class="articleList">
       <view class="articleContent">
-        <navigator v-for="(item,index) in article_List" :key="index">
-          <image mode="widthFix" v-bind:src="item.url"></image>
-          <view class="articleName">{{item.name}}</view>
-          <view class="articleDescription">{{item.description}}</view>
-        </navigator>
+			<view v-for="(item,index) in article_List" :key="index">
+			<navigator url="./articleDetail/index">
+			<image mode="widthFix" v-bind:src="item.url"></image>
+			<view class="articleName">{{item.name}}</view>
+			<view class="articleDescription">{{item.description}}</view>
+			</navigator>
+			</view>
       </view>
     </view>
   </view>
@@ -70,28 +78,40 @@
 					{
 						id: 0,
 						url: "../../static/images/bigType/学校.png",
+						name:"学校",
+						nexturl:"./differentKinds/index"
 					},
 					{
 						id: 1,
-						url: "../../static/images/bigType/学院.png"
+						url: "../../static/images/bigType/学院.png",
+						name:"学院",
+						nexturl:"./differentKinds/index"
 					},
 					{
 						id: 2,
-						url: "../../static/images/bigType/组织.png"
+						url: "../../static/images/bigType/组织.png",
+						name:"组织",
+						nexturl:"./differentKinds/index"
 					}
 				],
-        bigTypeRow_2:[
+        		bigTypeRow_2:[
 					{
 						id: 0,
-						url: "../../static/images/bigType/社团.png"
+						url: "../../static/images/bigType/社团.png",
+						name:"社团",
+						nexturl:"./differentKinds/index"
 					},
 					{
 						id: 1,
-						url: "../../static/images/bigType/综测.png"
+						url: "../../static/images/bigType/综测.png",
+						name:"综测",
+						nexturl:"./differentKinds/index"
 					},
 					{
 						id: 2,
-						url: "../../static/images/bigType/疫情.png"
+						url: "../../static/images/bigType/疫情.png",
+						name:"疫情",
+						nexturl:"./differentKinds/index"
 					}
        ],
 		}
@@ -111,15 +131,23 @@
 
 .index_bigType{
 		padding-top: 20rpx;
+		text-align: center;
     .bigTypeRow{
 		  display: flex;
       navigator{
     	  flex: 1;
       }
       image{
-        margin: 20rpx 90rpx;
-		    width: 70rpx;
+			margin: 0rpx 75rpx;
+		    width: 100rpx;
 	    }
+	  button{
+		color:rgb(0, 153, 255);
+		font-family: 'Trebuchet MS';
+		font-weight: bold;
+		border-width: 0rpx 75rpx 10rpx;
+		border:none;
+	  }
 	  }
 	}
 
@@ -136,24 +164,22 @@
       .articleContent{
         width: 100%;
         margin: 10 10rpx;
-        navigator{
           image{
             width: 100%;
           }
           .articleName{
+			text-align:center;
             color:$uni-color-title;
             font-size: $uni-font-size-title;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            text-align: center;
           }
           .articleDescription{
             $uni-color-subtitle: #555555;
             $uni-font-size-subtitle:36rpx;
             text-align: left;
           }
-        }
       }
     }
   }

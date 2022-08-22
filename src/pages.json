@@ -10,6 +10,12 @@
 	},
 	"pages": [ 
 		{
+			"path": "pages/Home/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
 			"path": "pages/Answer/index",
 			"style": {
 				"navigationBarTitleText": "答疑星球"
@@ -31,12 +37,6 @@
 			"path": "pages/PersonalCenter/index",
 			"style": {
 				"navigationBarTitleText": "我的"
-			}
-		},
-		{
-			"path": "pages/Home/index",
-			"style": {
-				"navigationBarTitleText": "首页"
 			}
 		},
 		{
@@ -76,30 +76,46 @@
 			"style": {
 				"navigationBarTitleText": "修改信息"
 			}
+		},
+		{
+			"path": "pages/Home/differentKinds/index",
+			"style": {
+				"navigationBarTitleText": "类别"
+			}
+		},
+		{
+			"path": "pages/Home/articleDetail/index",
+			"style": {
+				"navigationBarTitleText": "文章详情"
+			}
 		}
 	],
 	"tabBar": {
 		"color": "#a9b7b7",
-		"selectedColor": "#11cd6e",
+		"selectedColor": "#98d0f4",
 		"borderStyle": "white",
 		"list": [
 		  {
-			"iconPath": "/static/images/home.png",
+			"iconPath": "static/images/tabBar/home(1).png",
+			"selectedIconPath":"static/images/tabBar/home(2).png",
 			"pagePath": "pages/Home/index",
 			"text": "首页"
 		  },
 		  {
-			"iconPath": "/static/images/answer.png",
+			"selectedIconPath":"static/images/tabBar/answer(2).png",
+			"iconPath": "static/images/tabBar/answer(1).png",
 			"pagePath": "pages/Answer/index",
 			"text": "答疑星球"
 		  },
 		  {
-			"iconPath": "/static/images/forum.png",
+			"selectedIconPath":"static/images/tabBar/forum(2).png",
+			"iconPath": "static/images/tabBar/forum(1).png",
 			"pagePath": "pages/Forum/index",
 			"text": "话题论坛"
 		  },
 		  {
-			"iconPath": "/static/images/user.png",
+			"selectedIconPath":"static/images/tabBar/user(2).png",
+			"iconPath": "static/images/tabBar/user(1).png",
 			"pagePath": "pages/PersonalCenter/index",
 			"text": "我的"
 		  }

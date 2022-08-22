@@ -1,11 +1,11 @@
 <template>
 <view>
-	<Search></Search>
+	<search></search>
 </view>
 </template>
 
 <script>
- import {Search} from '../../components/Search.vue'
+ import Search from '../../components/Search.vue'
 	export default{
 		data(){
 			return{
@@ -13,7 +13,7 @@
 		}
 	},
 	components:{
-		Search
+		search:Search
 	}
 }
 <script>
