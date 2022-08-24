@@ -1,6 +1,7 @@
  <template>   
  <view class="articleDetail">
     <view class="title">别让等待成为遗憾</view>
+<<<<<<< HEAD
     <view class="author">
         <image mode="widthFix" :src="articleDetail.avatar"></image>
         <view class="name">{{articleDetail.name}}</view>
@@ -10,6 +11,17 @@
     <view class="content">
         <text>{{articleDetail.content}}</text>
         <view class="numberOfview">已浏览{{articleDetail.numberOfview}}次</view>
+=======
+    <view class="author" v-for="(item,index) in articleDetailList" :key="index">
+        <image mode="widthFix" :src="item.avatar"></image>
+        <view class="name">{{item.name}}</view>
+        <view class="releaseTime">{{item.releaseTime}}</view>
+    </view>
+
+    <view class="content" v-for="(item,index) in articleDetailList" :key="index">
+        <text>{{item.content}}</text>
+        <view class="numberOfview">已浏览{{item.numberOfview}}次</view>
+>>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
     </view>
 
     <view class="bottomList">
@@ -31,7 +43,12 @@ export default {
         showup1:true,
         showup2:true,
         showup3:true,
+<<<<<<< HEAD
       articleDetail: {
+=======
+      articleDetailList: [
+        {
+>>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
             avatar:"../../../static/images/textImages/avatar.png",
             name:"王俊杰",
             releaseTime:"2022-8-22",
@@ -41,6 +58,10 @@ export default {
             like: 98,
             content:"测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
         }
+<<<<<<< HEAD
+=======
+      ]
+>>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
     }
   },
   methods:{

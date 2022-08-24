@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 <view class="Forum">
 	<searchbar></searchbar>
 	
@@ -43,10 +44,15 @@
 				</navigator>
 			</uni-group>
 		</uni-section>
+=======
+<view>
+	<search></search>
+>>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
 </view>
 </template>
 
 <script>
+<<<<<<< HEAD
 import searchbar from '../../components/searchbar.vue'
 import { getDate } from '@/utils/getDate'
 export default{
@@ -167,3 +173,21 @@ export default{
 		}
 	}
 </style>
+=======
+ import Search from '../../components/Search.vue'
+	export default{
+		data(){
+			return{
+
+		}
+	},
+	components:{
+		search:Search
+	}
+}
+<script>
+
+<style>
+
+</style>
+>>>>>>> 94abdc9708553814549901685c4f1b5befbfab10

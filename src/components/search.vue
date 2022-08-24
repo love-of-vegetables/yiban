@@ -1,11 +1,11 @@
 <template>
  <view>
-  <view class="searchbar">
+  <view>
    <uni-search-bar placeholder="请输入关键词搜索" 
                   @input="input"
                   clearButton="auto" 
                   cancelButton="always" cancelText="取消" @cancel="cancel"  
-                  @confirm="search"
+                  @confirm="search" focus="true"
                   v-model="keyword" 
                   radius="50" 
                   bgColor="rgb(246,246,246)">
@@ -21,6 +21,17 @@
       <uni-tag circle="true" inverted="true" :text="item" v-for="(item,index) in historyList" :key="index" ></uni-tag>
     </view>
   </view>
+  
+  <!-- 热搜部分
+  <view class="hotsearch">
+    <view class="hotsearchTitle">
+      <text>猜你喜欢</text>
+      <uni-icons type="reload" size="17" @click="reload"></uni-icons>
+    </view>
+    <view class="historyList">
+      <uni-tag circle="true" inverted="true" :text="item" v-for="(item,index) in historyList" :key="index" ></uni-tag>
+    </view>
+  </view>-->
  </view>
 </template>
  
@@ -63,10 +74,6 @@
 </script>
 
 <style lang="scss">
-.searchbar{
-    padding: 6rpx 0;
-    background-color: #fff;
-}
 .historyBox{
   padding: 0 10rpx;
   .historyTitle{
