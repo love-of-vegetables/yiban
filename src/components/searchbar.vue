@@ -4,6 +4,7 @@
 	<uni-search-bar placeholder="请输入关键词搜索" 
 					clearButton="none" 
 					cancelButton="none"
+					@focus="focus"
 					radius="50" 
 					bgColor="rgb(246,246,246)">
 	</uni-search-bar>
@@ -13,7 +14,18 @@
 </template>
  
 <script>
-
+export default{
+	methods:{
+		focus(){
+			console.log("1"),
+			uni.navigateTo({
+				url:"/pages/Forum/Search/index",
+				animationType: 'pop-in',
+        		animationDuration: 200
+			})
+		}
+	}
+}
 </script>
 
 <style lang="scss">

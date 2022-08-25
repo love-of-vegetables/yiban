@@ -108,11 +108,7 @@ export default {
   }
   .body {
     .title {
-<<<<<<< HEAD
       text-align: left;
-=======
-      text-align: center;
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
       font-weight: 700;
       margin: 70rpx 0 60rpx;
     }

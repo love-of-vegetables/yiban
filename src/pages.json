@@ -46,6 +46,12 @@
 			}
 		},
 		{
+			"path": "pages/Forum/Search/index",
+			"style": {
+				"navigationBarTitleText": "话题论坛"
+			}
+		},		
+		{
 			"path": "pages/Forum/ForumDetail/index",
 			"style": {
 				"navigationBarTitleText": "xx吧"

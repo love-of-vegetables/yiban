@@ -5,11 +5,7 @@
   		<block v-for="(item,index) in coverList" :key="index">
     	<swiper-item>		
 		<view class='mask' v-if="index != centerItem"></view>
-<<<<<<< HEAD
 		<image mode="widthFix" v-bind:src="item.src" />
-=======
-		<image v-bind:src="item.url" />
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
 		</swiper-item>
 		</block>
 	</swiper>
@@ -57,7 +53,6 @@
 			return{
         coverList:[
 					{
-<<<<<<< HEAD
 						src: "../../static/images/swiper/1.jpg"
 					},
 					{
@@ -68,18 +63,6 @@
 					}
 				],
 		article_List:[
-=======
-						url: "../../static/images/1.png"
-					},
-					{
-						url: "../../static/images/1.png"
-					},
-					{
-						url: "../../static/images/1.png"
-					}
-				],
-				article_List:[
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
 					{
 						url: "../../static/images/article/article1.png",
 						name: "五四青年节",
@@ -91,72 +74,42 @@
 						description: "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 					}
 				],
-<<<<<<< HEAD
 		bigTypeRow_1:[
 					{
 						id: 0,
 						url: "../../static/images/bigType/xuexiao.png",
-=======
-				bigTypeRow_1:[
-					{
-						id: 0,
-						url: "../../static/images/bigType/学校.png",
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
 						name:"学校",
 						nexturl:"./differentKinds/index"
 					},
 					{
 						id: 1,
-<<<<<<< HEAD
 						url: "../../static/images/bigType/xueyuan.png",
-=======
-						url: "../../static/images/bigType/学院.png",
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
 						name:"学院",
 						nexturl:"./differentKinds/index"
 					},
 					{
 						id: 2,
-<<<<<<< HEAD
 						url: "../../static/images/bigType/zuzhi.png",
-=======
-						url: "../../static/images/bigType/组织.png",
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
 						name:"组织",
 						nexturl:"./differentKinds/index"
 					}
 				],
-<<<<<<< HEAD
 		bigTypeRow_2:[
 					{
 						id: 0,
 						url: "../../static/images/bigType/shetuan.png",
-=======
-        		bigTypeRow_2:[
-					{
-						id: 0,
-						url: "../../static/images/bigType/社团.png",
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
 						name:"社团",
 						nexturl:"./differentKinds/index"
 					},
 					{
 						id: 1,
-<<<<<<< HEAD
 						url: "../../static/images/bigType/zongce.png",
-=======
-						url: "../../static/images/bigType/综测.png",
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
 						name:"综测",
 						nexturl:"./differentKinds/index"
 					},
 					{
 						id: 2,
-<<<<<<< HEAD
 						url: "../../static/images/bigType/yiqing.png",
-=======
-						url: "../../static/images/bigType/疫情.png",
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
 						name:"疫情",
 						nexturl:"./differentKinds/index"
 					}
@@ -185,13 +138,8 @@
     	  flex: 1;
       }
       image{
-<<<<<<< HEAD
 			margin: 0rpx 90rpx;
 		    width: 70rpx;
-=======
-			margin: 0rpx 75rpx;
-		    width: 100rpx;
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
 	    }
 	  button{
 		color:rgb(0, 153, 255);
@@ -205,15 +153,9 @@
 
   .index_recentArticle{
     .Title{
-<<<<<<< HEAD
       font-size: $uni-font-size-sm;
       font-weight: 600;
       padding: 5rpx;
-=======
-      font-size: $uni-font-size-base;
-      font-weight: 600;
-      padding: 10rpx;
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
       background-color:#E0E0E0;
     }
     .articleList{

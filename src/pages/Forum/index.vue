@@ -1,8 +1,6 @@
 <template>
-<<<<<<< HEAD
 <view class="Forum">
-	<searchbar></searchbar>
-	
+	 <searchbar @click="focus"></searchbar>
 	<uni-section title="我关注的">
 		<uni-group v-for="(item,index) in Post_List" :key="index" mode="card">
 			<navigator url="./ForumDetail/index">
@@ -44,15 +42,11 @@
 				</navigator>
 			</uni-group>
 		</uni-section>
-=======
-<view>
-	<search></search>
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
+
 </view>
 </template>
 
 <script>
-<<<<<<< HEAD
 import searchbar from '../../components/searchbar.vue'
 import { getDate } from '@/utils/getDate'
 export default{
@@ -95,7 +89,8 @@ export default{
       		}		
     },
 	methods:{
-		gotoSearch(){
+		focus(){
+			console.log("2"),
 			uni.navigateTo({
 				url:"./Search/index.vue",
 				animationType: 'pop-in',
@@ -173,21 +168,4 @@ export default{
 		}
 	}
 </style>
-=======
- import Search from '../../components/Search.vue'
-	export default{
-		data(){
-			return{
 
-		}
-	},
-	components:{
-		search:Search
-	}
-}
-<script>
-
-<style>
-
-</style>
->>>>>>> 94abdc9708553814549901685c4f1b5befbfab10
