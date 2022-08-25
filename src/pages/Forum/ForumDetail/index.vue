@@ -1,25 +1,29 @@
 <template>
 <view class="ForumDetail">
 	<searchbar></searchbar>
-		<uni-section>
-			<uni-group v-for="(item,index) in HotPosts" :key="index">
-				<navigator url="/components/Post/index">
-					<view class="header">
-						<image class="avatar" :src="item.avatar"></image>
-						<view class="info">
-							<view>{{item.username}}</view>
-							<view>{{getDateFrom(item.publishDate)}}</view>
-						</view>
+
+	<view class="header">
+		
+	</view>
+	<uni-section>
+		<uni-group v-for="(item,index) in HotPosts" :key="index">
+			<navigator url="/components/Post/index">
+				<view class="header">
+					<image class="avatar" :src="item.avatar"></image>
+					<view class="info">
+						<view>{{item.username}}</view>
+						<view>{{getDateFrom(item.publishDate)}}</view>
 					</view>
-					<view class="title">{{item.title}}</view>
-					<view class="func-btn">
-						<view class="func-item"><text class="t-icon t-icon-fenxiang1 icon"></text><text class="text">{{item.share}}</text></view>
-						<view class="func-item"><text class="t-icon t-icon-pinglun icon"></text><text class="text">{{item.comment}}</text></view>
-						<view class="func-item"><text class="t-icon t-icon-zan icon"></text><text class="text">{{item.like}}</text></view>
-					</view>
-				</navigator>
-			</uni-group>
-		</uni-section>
+				</view>
+				<view class="title">{{item.title}}</view>
+				<view class="func-btn">
+					<view class="func-item"><text class="t-icon t-icon-fenxiang1 icon"></text><text class="text">{{item.share}}</text></view>
+					<view class="func-item"><text class="t-icon t-icon-pinglun icon"></text><text class="text">{{item.comment}}</text></view>
+					<view class="func-item"><text class="t-icon t-icon-zan icon"></text><text class="text">{{item.like}}</text></view>
+				</view>
+			</navigator>
+		</uni-group>
+	</uni-section>
 </view>
 </template>
 

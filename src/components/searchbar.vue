@@ -1,7 +1,7 @@
 <template>
  <view>
   <view class="searchbar">
-	<uni-search-bar placeholder="请输入关键词搜索" 
+	<uni-search-bar  ref="bar" placeholder="请输入关键词搜索" 
 					clearButton="none" 
 					cancelButton="none"
 					@focus="focus"
@@ -14,10 +14,12 @@
 </template>
  
 <script>
+
 export default{
 	methods:{
-		focus(){
-			console.log("1"),
+		focus(e){
+			console.log(this.$refs.bar),
+			onclick="window.history.go(1)",
 			uni.navigateTo({
 				url:"/pages/Forum/Search/index",
 				animationType: 'pop-in',
