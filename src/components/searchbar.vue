@@ -4,7 +4,7 @@
 	<uni-search-bar  ref="bar" placeholder="请输入关键词搜索" 
 					clearButton="none" 
 					cancelButton="none"
-					@focus="focus"
+					:focus="isFocus"
 					radius="50" 
 					bgColor="rgb(246,246,246)">
 	</uni-search-bar>
@@ -16,15 +16,19 @@
 <script>
 
 export default{
+	data() {
+		return {
+			isFocus: false
+		}
+	},
 	methods:{
 		focus(e){
-			console.log(this.$refs.bar),
-			onclick="window.history.go(1)",
+			console.log(this.$refs.bar)
 			uni.navigateTo({
 				url:"/pages/Forum/Search/index",
 				animationType: 'pop-in',
         		animationDuration: 200
-			})
+			})		
 		}
 	}
 }

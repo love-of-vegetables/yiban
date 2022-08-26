@@ -4,9 +4,8 @@
       <uni-search-bar cancelButton="none"
                       clearButton="none"
                       v-model="keyword"
-                      @focus="focus"
                       radius="50"
-                      placeholder="请输入关键词搜索"
+                      placeholder="输入关键词搜索"
                       bgColor="rgb(246,246,246)"
                       class="search-bar">
       </uni-search-bar>

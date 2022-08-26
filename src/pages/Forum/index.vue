@@ -1,6 +1,6 @@
 <template>
 <view class="Forum">
-	 <searchbar @click="focus"></searchbar>
+	 <view @click="focus"><searchbar ></searchbar></view>
 	<uni-section title="我关注的">
 		<uni-group v-for="(item,index) in Post_List" :key="index" mode="card">
 			<navigator url="./ForumDetail/index">
@@ -70,9 +70,11 @@ export default{
     },
 	methods:{
 		focus(){
-			console.log("2"),
+			console.log("2")
 			uni.navigateTo({
-				url:"./Search/index.vue",
+				// url:"./Search/index.vue",
+				url:"/pages/Forum/Search/index",
+
 				animationType: 'pop-in',
         		animationDuration: 200
 			})
