@@ -28,14 +28,14 @@
 
 <script>
 import { getDate } from '@/utils/getDate'
-import Searchbar from '../../../components/searchbar.vue'
+import Searchbar from '@/components/searchbar.vue'
 export default{
   components: { Searchbar }, 
     data(){
         return{
 			HotPosts:[
 					{
-						avatar:"../../../static/images/textImages/avatar.png",
+						avatar:"@/static/images/textImages/avatar.png",
 						username: 'Qcsa',
 						title: '11',
 						publishDate: new Date(),
@@ -44,7 +44,7 @@ export default{
 						like: 30
 					},
 					{
-						avatar:"../../../static/images/textImages/avatar.png",
+						avatar:"@/static/images/textImages/avatar.png",
 						username: 'xlssss',
 						title: 'ceashi',
 						publishDate: new Date(),

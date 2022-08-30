@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import {getDate} from '../../../utils/getDate'
+import {getDate} from '@/utils/getDate'
 export default {
   data() {
     return {

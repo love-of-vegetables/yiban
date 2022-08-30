@@ -16,7 +16,7 @@
           @click="goInto(item.id)">
       <view class="header">
         <image class="avatar"
-               src="../../static/images/textImages/avatar.png"></image>
+               src="~@/static/images/textImages/avatar.png"></image>
         <view class="header-right">
           <view class="author">{{item.author}}</view>
           <view class="publishDate">{{getDateFrom(item.publishDate)}}</view>
