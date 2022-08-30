@@ -2,22 +2,26 @@
   <view class="container">
     <view class="head">
       <image class="image"
-             src="../../static/images/textImages/avatar.png" />
+             :src="userInfo.avatarUrl"
+             v-show="isLogin" />
       <view class="login">
-        <text v-if="!isLogin" class="loginBtn" @click="toLogin">点击登录
+        <text v-if="!isLogin"
+              class="loginBtn"
+              @tap="toLogin">点击登录
         </text>
-        <text v-if="isLogin"  @click="toLogin">{{ userInfo.username }}</text>
+        <text v-if="isLogin">{{ userInfo.nickName }}</text>
       </view>
-      <navigator class="userInfo"
-                 v-if="isLogin"
-                 url="/pages/PersonalCenter/Profile/index">
-        个人资料
-      </navigator>
-      <text class="t-icon t-icon-yousanjiaoxing icon" v-if="isLogin"></text>
+      <view class="head-right"
+            v-if="isLogin">
+        <navigator class="userInfo"
+                   url="/page_personalCenter/Profile/index">
+          个人资料
+        </navigator>
+      </view>
     </view>
     <view class="function">
       <navigator class="func-item"
-                 url="/pages/PersonalCenter/Article/index">
+                 url="/page_personalCenter/Article/index">
         <uni-icons custom-prefix="t-icon"
                    type="t-icon-tiezi"
                    size="16"
@@ -28,7 +32,7 @@
                    color="lightgray"></uni-icons>
       </navigator>
       <navigator class="func-item"
-                 url="/pages/PersonalCenter/History/index">
+                 url="/page_personalCenter/History/index">
         <uni-icons custom-prefix="t-icon"
                    type="t-icon-liulan"
                    size="16"
@@ -39,7 +43,7 @@
                    color="lightgray"></uni-icons>
       </navigator>
       <navigator class="func-item"
-                 url="/pages/PersonalCenter/MyLike/index">
+                 url="/page_personalCenter/MyLike/index">
         <uni-icons custom-prefix="t-icon"
                    type="t-icon-shoucangjia"
                    size="16"
@@ -59,17 +63,41 @@ export default {
   data () {
     return {
       isLogin: false,
-      userInfo: {
-        username: 'qcsa'
-      }
+      userInfo: null
     }
   },
   components: {
     uniIcons
   },
   methods: {
-    toLogin() {
-      this.isLogin = !this.isLogin
+    toLogin () {
+      // 获取code 小程序专有，用户登录凭证。
+      uni.getUserProfile({
+        desc: "获取用户基本资料",
+        success: (res) => {
+          console.log(res);
+          this.userInfo = res.userInfo;
+          this.isLogin = true
+        },
+        // 用户取消登录后的提示
+        fail: (res) => {
+          uni.showModal({
+            title: "授权用户信息失败！",
+            // 是否显示取消按钮，默认为 true
+            showCancel: false
+          })
+        }
+      })
+      //获取成功基本资料后开启登录，基本资料首先要授权
+      uni.login({
+        provider: 'weixin',
+        success: (res) => {
+          console.log(res);
+          if (res.errMsg == "login:ok") {
+            let code = res.code;
+          }
+        }
+      })
     }
   }
 }
@@ -99,16 +127,15 @@ export default {
         font-size: 32rpx;
       }
     }
-    .userInfo {
-      height: $avatarSize;
-      line-height: $avatarSize;
-      font-size: 32rpx;
-      color: #fff;
+    .head-right {
       margin-left: auto;
-    }
-    .icon {
-      margin-top: 24px;
-      margin-left: 6rpx;
+      .userInfo {
+        height: $avatarSize;
+        line-height: $avatarSize;
+        font-size: 32rpx;
+        color: #fff;
+        margin-left: auto;
+      }
     }
   }
   .function {

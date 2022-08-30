@@ -22,18 +22,6 @@
 			}
 		},
 		{
-			"path": "pages/Answer/edit/index",
-			"style": {
-				"navigationBarTitleText": "编辑"
-			}
-		},
-		{
-			"path": "components/Post/index",
-			"style": {
-				"navigationBarTitleText": "帖子详情"
-			}
-		},
-		{
 			"path": "pages/PersonalCenter/index",
 			"style": {
 				"navigationBarTitleText": "我的"
@@ -46,62 +34,70 @@
 			}
 		},
 		{
-			"path": "pages/Forum/Search/index",
+			"path": "components/Post/index",
 			"style": {
-				"navigationBarTitleText": "话题论坛"
+				"navigationBarTitleText": "帖子详情"
 			}
-		},		
+		}
+	],
+	"subPackages": [
 		{
-			"path": "pages/Forum/ForumDetail/index",
+			"root": "page_home",
+			"pages": [
+				{
+					"path": "differentKinds/index",
+					"style": {
+						"navigationBarTitleText": "类别"
+					}
+				},
+				{
+					"path": "articleDetail/index",
+					"style": {
+						"navigationBarTitleText": "文章详情"
+					}
+				}
+			]
+		}, {
+		"root": "page_answer",
+		"pages": [
+			{
+				"path": "edit/index",
+				"style": {
+					"navigationBarTitleText": "编辑"
+				}
+			}
+		]
+	}, {
+		"root": "page_forum",
+		"pages": [{
+			"path": "ForumDetail/index",
 			"style": {
 				"navigationBarTitleText": "xx吧"
 			}
-		},
-		{
-			"path": "pages/PersonalCenter/Article/index",
+		}]
+	}, {
+		"root": "page_personalCenter",
+		"pages": [{
+			"path": "Article/index",
 			"style": {
 				"navigationBarTitleText": "我的帖子",
 				"enablePullDownRefresh": true
 			}
 		},
 		{
-			"path": "pages/PersonalCenter/History/index",
+			"path": "History/index",
 			"style": {
 				"navigationBarTitleText": "历史记录",
 				"enablePullDownRefresh": true
 			}
 		},
 		{
-			"path": "pages/PersonalCenter/MyLike/index",
+			"path": "MyLike/index",
 			"style": {
 				"navigationBarTitleText": "我的收藏"
 			}
-		},
-		{
-			"path": "pages/PersonalCenter/Profile/index",
-			"style": {
-				"navigationBarTitleText": "个人中心"
-			}
-		},
-		{
-			"path": "pages/PersonalCenter/Profile/editInfo/index",
-			"style": {
-				"navigationBarTitleText": "修改信息"
-			}
-		},
-		{
-			"path": "pages/Home/differentKinds/index",
-			"style": {
-				"navigationBarTitleText": "类别"
-			}
-		},
-		{
-			"path": "pages/Home/articleDetail/index",
-			"style": {
-				"navigationBarTitleText": "文章详情"
-			}
-		}
-	],
+		}]
+	}],
 	"tabBar": {
 		"color": "#a9b7b7",
 		"selectedColor": "#98d0f4",

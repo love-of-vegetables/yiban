@@ -143,7 +143,7 @@
 	    }
 	  button{
 		color:rgb(0, 153, 255);
-		font-family: 'Trebuchet MS';
+		// font-family: 'Trebuchet MS';
 		font-weight: bold;
 		border-width: 0rpx 75rpx 10rpx;
 		border:none;

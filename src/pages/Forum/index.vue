@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import searchbar from '../../components/searchbar.vue'
+import searchbar from '@/components/searchbar.vue'
 import { getDate } from '@/utils/getDate'
 export default{
   components: { searchbar }, 
@@ -73,7 +73,7 @@ export default{
 			console.log("2")
 			uni.navigateTo({
 				// url:"./Search/index.vue",
-				url:"/pages/Forum/Search/index",
+				url:"/page_forum/Search/index",
 
 				animationType: 'pop-in',
         		animationDuration: 200
@@ -87,8 +87,8 @@ export default{
 </script>
 
 <style lang="scss" scoped>
-@import "@/iconfont/iconfont-weapp-icon.css";
-@import "@/static/style/common.scss";
+// @import "@/iconfont/iconfont-weapp-icon.css";
+// @import "@/static/style/common.scss";
 .Forum{
 	uni-section{
 		uni-group{
