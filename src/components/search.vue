@@ -31,16 +31,6 @@
       </view>
     </view>
 
-    <!-- 热搜部分
-  <view class="hotsearch">
-    <view class="hotsearchTitle">
-      <text>猜你喜欢</text>
-      <uni-icons type="reload" size="17" @click="reload"></uni-icons>
-    </view>
-    <view class="historyList">
-      <uni-tag circle="true" inverted="true" :text="item" v-for="(item,index) in historyList" :key="index" ></uni-tag>
-    </view>
-  </view>-->
   </view>
 </template>
  
@@ -68,7 +58,6 @@ export default {
       //此处向后端发送res.value并重新请求historyList
     },
     cancel (res) {
-      onclick = "window.history.go(1)"
       uni.showToast({
         title: '返回上层界面',
       })

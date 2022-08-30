@@ -2,9 +2,8 @@
 <view class="ForumDetail">
 	<searchbar></searchbar>
 
-	<view class="header">
-		
-	</view>
+
+	
 	<uni-section>
 		<uni-group v-for="(item,index) in HotPosts" :key="index">
 			<navigator url="/components/Post/index">
