@@ -24,21 +24,12 @@ export default {
       historys: [
         {
           id: 1,
-          title: 'Title',
+          title: '测试',
           publishDate: new Date(),
-          content: 'Content',
-          comment: ['111', '222'],
+          content: '这是个用来测试的帖子',
+          comment: ['11', '22'],
           like: 10,
           type: '1'
-        },
-        {
-          id: 2,
-          title: 'Title2',
-          publishDate: new Date(),
-          content: 'Content2',
-          comment: ['111', '222'],
-          like: 10,
-          type: '2'
         }
       ]
     }

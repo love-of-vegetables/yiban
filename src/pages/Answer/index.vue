@@ -50,7 +50,7 @@ export default {
           id: 1,
           author: 'Qcsa',
           publishDate: new Date(),
-          content: 'Content',
+          content: '内容区',
           share: 10,
           comment: 112,
           like: 98
@@ -67,7 +67,7 @@ export default {
     },
     gotoEdit () {
       uni.navigateTo({
-        url: '/pages/Answer/edit/index',
+        url: '/page_answer/edit/index',
         animationType: 'pop-in',
         animationDuration: 200
       })

@@ -102,7 +102,21 @@
 			"style": {
 				"navigationBarTitleText": "我的收藏"
 			}
-		}]
+		},
+		{
+			"path": "Profile/index",
+			"style": {
+				"navigationBarTitleText": "个人信息"
+			}
+		}
+		,
+		{
+			"path": "Profile/editInfo/index",
+			"style": {
+				"navigationBarTitleText": "修改信息"
+			}
+		}
+	]
 	}],
 	"tabBar": {
 		"color": "#a9b7b7",

@@ -14,7 +14,7 @@
         <text class="value">{{userInfo.major}}</text>
       </view>
     </view>
-    <navigator class="btn" url="/pages/PersonalCenter/Profile/editInfo/index">
+    <navigator class="btn" url="/page_personalCenter/Profile/editInfo/index">
       <button>修改信息</button>
     </navigator>
   </view>
@@ -46,7 +46,7 @@ export default {
     margin-top: 20rpx;
     background-color: #fff;
     border-radius: 10rpx;
-    box-shadow: $uni-shadow-base;
+    box-shadow: 0 1px 8px 1px rgba($color: #a5a5a5, $alpha: 0.2);
     .item {
       height: $userItemHeight;
       line-height: $userItemHeight;

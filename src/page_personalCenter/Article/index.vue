@@ -3,13 +3,13 @@
     <view class="article-wrapper">
       <view class="article" v-for="(article, index) in articles" :key="index">
         <view class="head">
-          <view>{{article.title}}</view>
-          <view>{{getDateFrom(article.publishDate)}}</view>
+          <view>{{ article.title }}</view>
+          <view>{{ getDateFrom(article.publishDate) }}</view>
         </view>
-        <view class="body">{{article.content}}</view>
+        <view class="body">{{ article.content }}</view>
         <view class="footer">
-          <text class="text">评论 {{article.comment.length}}</text>
-          <text class="text">赞 {{article.like}}</text>
+          <text class="text">评论 {{ article.comment.length }}</text>
+          <text class="text">赞 {{ article.like }}</text>
         </view>
       </view>
     </view>
@@ -17,50 +17,45 @@
 </template>
 
 <script>
-import {getDate} from '@/utils/getDate'
+import { getDate } from '@/utils/getDate'
 export default {
   data() {
     return {
       articles: [
         {
           id: 1,
-          title: 'Title',
+          title: '测试',
           publishDate: new Date(),
-          content: 'Content',
-          comment: ['111', '222'],
-          like: 10
+          content: '这是个用来测试的帖子',
+          comment: ['11', '22'],
+          like: 10,
         },
-        {
-          id: 2,
-          title: 'Title2',
-          publishDate: new Date(),
-          content: 'Content2',
-          comment: ['111', '222', '333'],
-          like: 20
-        }
-      ]
+      ],
     }
   },
   methods: {
-    editArticle(id) {
-
-    },
-    deleteArticle(id) {
-
-    },
     getDateFrom(date) {
       return getDate(date)
+    },
+    gotoDetail() {
+      uni.navigateTo({
+        url: 'components/Post/index',
+        animationType: 'pop-in',
+        animationDuration: 200,
+      })
     }
-  }
+  },
 }
-
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .contain {
+  // width: 100%;
   .article-wrapper {
-      box-shadow: 0 3rpx 4rpx 6rpx rgba(211, 211, 211, 0.4);
+    // width: 100%;
+    box-shadow: 0 3rpx 4rpx 6rpx rgba(211, 211, 211, 0.4);
     .article {
+      // width: 100%;
       padding: 20rpx 20rpx 30rpx;
       border-bottom: 1px solid rgba(211, 211, 211, 0.3);
       .head {
@@ -68,7 +63,13 @@ export default {
         justify-content: space-between;
       }
       .body {
-        min-height: 80rpx;
+        width: 50%;
+        overflow: hidden;
+        word-break: break-all; 
+        text-overflow: ellipsis; 
+        display: -webkit-box; 
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
       }
       .footer {
         display: flex;

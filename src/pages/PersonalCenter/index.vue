@@ -7,7 +7,7 @@
       <view class="login">
         <text v-if="!isLogin"
               class="loginBtn"
-              @tap="toLogin">点击登录
+              @click="toLogin">点击登录
         </text>
         <text v-if="isLogin">{{ userInfo.nickName }}</text>
       </view>
@@ -75,7 +75,7 @@ export default {
       uni.getUserProfile({
         desc: "获取用户基本资料",
         success: (res) => {
-          console.log(res);
+          // console.log(res);
           this.userInfo = res.userInfo;
           this.isLogin = true
         },
@@ -92,7 +92,7 @@ export default {
       uni.login({
         provider: 'weixin',
         success: (res) => {
-          console.log(res);
+          // console.log(res);
           if (res.errMsg == "login:ok") {
             let code = res.code;
           }

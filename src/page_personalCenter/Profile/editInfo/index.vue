@@ -87,7 +87,7 @@ export default {
 .container {
   width: 95%;
   margin: 30rpx auto 0;
-  box-shadow: $uni-shadow-base;
+  box-shadow: 0 1px 8px 1px rgba($color: #a5a5a5, $alpha: 0.2);
   .example {
     padding: 15px;
     background-color: #fff;
