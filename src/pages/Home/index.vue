@@ -71,7 +71,7 @@
 					{	
 						url: "../../static/images/article/article2.png",
 						name: "成绩录入最后一天",
-						description: "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+						description: "根据教务处通知，7月17号（今天）就是教师录入成绩的截止时间了"
 					}
 				],
 		bigTypeRow_1:[

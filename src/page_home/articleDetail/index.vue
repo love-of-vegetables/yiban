@@ -1,6 +1,6 @@
  <template>   
  <view class="articleDetail">
-    <view class="title">别让等待成为遗憾</view>
+    <view class="title">{{articleDetail.title}}</view>
 
     <view class="author">
         <image mode="widthFix" :src="articleDetail.avatar"></image>
@@ -10,6 +10,7 @@
 
     <view class="content">
         <text>{{articleDetail.content}}</text>
+        <image src="../../static/images/article/articleDetail.jpg" mode="widthFix"></image>
         <view class="numberOfview">已浏览{{articleDetail.numberOfview}}次</view>
     </view>
 
@@ -33,6 +34,7 @@ export default {
         showup2:true,
         showup3:true,
       articleDetail: {
+            title:"【刚刚】广州新增7+2，具体情况如下！多区最新通告！这些区域恢复线下教学",
             avatar:"../../static/images/textImages/avatar.png",
             name:"王俊杰",
             releaseTime:"2022-8-22",
@@ -40,7 +42,7 @@ export default {
             share: 10,
             comment: 112,
             like: 98,
-            content:"测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
+            content:"9月3日0-24时，全省新增本土确诊病例79例（广州4例，深圳69例，江门6例）；新增本土无症状感染者24例（深圳20例，东莞1例，江门2例，揭阳1例）。全省新增境外输入确诊病例17例（广州5例，深圳8例，珠海2例，佛山2例）；新增境外输入无症状感染者14例（广州1例，深圳4例，珠海2例，佛山3例，惠州1例，东莞2例，中山1例）；另有1例境外输入无症状感染者转确诊病例（广州1例）。"
         }
     }
   },
@@ -78,6 +80,10 @@ export default {
     .content{
         text{
             font-size:$uni-font-size-base;
+        }
+        image{
+            width:600rpx;
+            margin:10rpx 75rpx;
         }
         .numberOfview{
             font-size:$uni-font-size-sm;

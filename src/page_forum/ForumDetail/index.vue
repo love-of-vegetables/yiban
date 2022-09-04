@@ -10,7 +10,6 @@
 		<view class="content">xxxx</view> 
 	</view>
 	
-	<uni-section>
 		<uni-group v-for="(item,index) in HotPosts" :key="index">
 			<navigator url="/components/Post/index">
 				<view class="tieba">
@@ -28,7 +27,12 @@
 				</view>
 			</navigator>
 		</uni-group>
-	</uni-section>
+		<view class="edit">
+      		<uni-icons type="plusempty"
+                 size="40"
+                 class="editIcon"
+                 @click="gotoEdit"></uni-icons>
+    	</view>
 </view>
 </template>
 
@@ -71,7 +75,14 @@ export default{
 		},
 		getDateFrom (date) {
       		return getDate(date)
-    	}
+    	},
+		gotoEdit () {
+      		uni.navigateTo({
+			url: '/pages/Answer/edit/index',
+			animationType: 'pop-in',
+			animationDuration: 200
+      })
+    }
 	}
 }
 </script>
@@ -100,16 +111,16 @@ export default{
 	.rule{
 		border-radius: 20% 20% 0 0;
 		display: flex;
+		background-color: #fff;
 		.smalltitle{
-			background-color: greenyellow;
+			background-color: rgb(47, 179, 255);
 			font-size: small;
-			margin: 5rpx 20rpx 5rpx;
+			margin: 10rpx 20rpx 10rpx;
 		}
 		.content{
 			font-size: medium;
 		}
 	}
-	uni-section{
 		uni-group{
 			navigator{
 				font-size:24rpx;
@@ -154,6 +165,13 @@ export default{
   				}
 			}
 		}
+	.edit {
+		position: fixed;
+		bottom: 160rpx;
+		right: 24rpx;
+		border-radius: 50%;
+		border: 6rpx solid rgba(63, 62, 62, 0.9);
+		background: burlywood;
 	}
-}
+	}
 </style>

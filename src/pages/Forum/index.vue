@@ -30,6 +30,7 @@
         </navigator>
       </uni-group>
     </uni-section>
+
   </view>
 </template>
 
