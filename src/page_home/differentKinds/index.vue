@@ -30,14 +30,14 @@ export default{
         return{
             article_List:[
                 {
-                    url: "../../../static/images/article/article1.png",
-                    name: "五四青年节",
-                    description: "xxxxxxxxxxx"
+                    url: "../../static/images/article/article1.png",
+                    name: "口协招新",
+                    description: "华山运动场8号摊位"
                 },
                 {	
-                    url: "../../../static/images/article/article2.png",
-                    name: "床前明月光，疑是地上霜，举头望明月，低头思故乡",
-                    description: "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                    url: "../../static/images/article/article2.png",
+                    name: "今天是录入成绩的截止时间，大家需要留意啦",
+                    description: "据教务处通知，7月17就是教师录入的"
                 }
             ],
         }

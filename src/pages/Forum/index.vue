@@ -3,9 +3,9 @@
 	 <view @click="focus"><searchbar ></searchbar></view>
 	<uni-section title="我关注的">
 		<uni-group v-for="(item,index) in Post_List" :key="index" mode="card">
-			<navigator url="./ForumDetail/index">
+			<navigator url="../../page_forum/ForumDetail/index">
 				<image mode="widthFix" :src="item.avatar"></image>
-				<view class="name">{{item.name}}</view>
+				<view class="name">{{item.name}}吧</view>
 				<view class="numberOfattention">关注：{{item.numberOfattention}}</view>
 				<view class="TotalPosts">贴子：{{item.TotalPosts}}</view>  
 			</navigator>
@@ -14,9 +14,9 @@
 
 	<uni-section title="近期浏览">
 		<uni-group v-for="(item,index) in Post_List_recent" :key="index" mode="card">
-			<navigator url="./ForumDetail/index">
+			<navigator url="../../page_forum/ForumDetail/index">
 				<image mode="widthFix" :src="item.avatar"></image>
-				<view class="name">{{item.name}}</view>
+				<view class="name">{{item.name}}吧</view>
 				<view class="numberOfattention">关注：{{item.numberOfattention}}</view>
 				<view class="TotalPosts">贴子：{{item.TotalPosts}}</view>  
 			</navigator>
@@ -36,7 +36,7 @@ export default{
 			Post_List:[
 					{
 						avatar: "../../static/images/bigType/shetuan.png",
-						name:"二刺螈",
+						name:"二次元",
 						numberOfattention:900,
 						TotalPosts:1000
 					},
@@ -50,31 +50,17 @@ export default{
 			Post_List_recent:[
 					{
 						avatar: "../../static/images/bigType/zuzhi.png",
-						name:"信杰神得永生",
-						numberOfattention:10000000,
-						TotalPosts:1
-					}
-				],
-			HotPosts:[
-					{
-						avatar:"../../static/images/textImages/avatar.png",
-						username: 'Qcsa',
-						title: '11',
-						publishDate: new Date(),
-						share: 10,
-						comment: 20,
-						like: 30
+						name:"西园",
+						numberOfattention:1000,
+						TotalPosts:172
 					}
 				]
       		}		
     },
 	methods:{
 		focus(){
-			console.log("2")
 			uni.navigateTo({
-				// url:"./Search/index.vue",
-				url:"/page_forum/Search/index",
-
+				url:"../../page_forum/Search/index",
 				animationType: 'pop-in',
         		animationDuration: 200
 			})

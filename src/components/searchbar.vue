@@ -25,7 +25,7 @@ export default{
 		focus(e){
 			console.log(this.$refs.bar)
 			uni.navigateTo({
-				url:"/pages/Forum/Search/index",
+				url:"./search",
 				animationType: 'pop-in',
         		animationDuration: 200
 			})		

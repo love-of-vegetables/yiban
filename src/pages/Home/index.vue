@@ -35,7 +35,7 @@
     <view class="articleList">
       <view class="articleContent">
 			<view v-for="(item,index) in article_List" :key="index">
-			<navigator url="./articleDetail/index">
+			<navigator url="../../page_home/articleDetail/index">
 			<image mode="widthFix" v-bind:src="item.url"></image>
 			<view class="articleName">{{item.name}}</view>
 			<view class="articleDescription">{{item.description}}</view>
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-	export default{ 
+	export default{
 		data(){
 			return{
         coverList:[
@@ -65,12 +65,12 @@
 		article_List:[
 					{
 						url: "../../static/images/article/article1.png",
-						name: "五四青年节",
-						description: "xxxxxxxxxxx"
+						name: "口协招新",
+						description: "华山运动场8号摊位晚上19:00"
 					},
 					{	
 						url: "../../static/images/article/article2.png",
-						name: "床前明月光，疑是地上霜，举头望明月，低头思故乡",
+						name: "成绩录入最后一天",
 						description: "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 					}
 				],
@@ -79,19 +79,19 @@
 						id: 0,
 						url: "../../static/images/bigType/xuexiao.png",
 						name:"学校",
-						nexturl:"./differentKinds/index"
+						nexturl:"../../page_home/differentKinds/index"
 					},
 					{
 						id: 1,
 						url: "../../static/images/bigType/xueyuan.png",
 						name:"学院",
-						nexturl:"./differentKinds/index"
+						nexturl:"../../page_home/differentKinds/index"
 					},
 					{
 						id: 2,
 						url: "../../static/images/bigType/zuzhi.png",
 						name:"组织",
-						nexturl:"./differentKinds/index"
+						nexturl:"../../page_home/differentKinds/index"
 					}
 				],
 		bigTypeRow_2:[
@@ -99,23 +99,30 @@
 						id: 0,
 						url: "../../static/images/bigType/shetuan.png",
 						name:"社团",
-						nexturl:"./differentKinds/index"
+						nexturl:"../../page_home/differentKinds/index"
 					},
 					{
 						id: 1,
 						url: "../../static/images/bigType/zongce.png",
 						name:"综测",
-						nexturl:"./differentKinds/index"
+						nexturl:"../../page_home/differentKinds/index"
 					},
 					{
 						id: 2,
 						url: "../../static/images/bigType/yiqing.png",
 						name:"疫情",
-						nexturl:"./differentKinds/index"
+						nexturl:"../../page_home/differentKinds/index"
 					}
        ],
 		}
 	}
+	/*mounted(){
+		uni.request({
+			url: "http://43.143.33.55:443/articles/hot",
+		}).then(result =>{
+			console.log(result);
+		})
+	}*/
 }
 </script>
 

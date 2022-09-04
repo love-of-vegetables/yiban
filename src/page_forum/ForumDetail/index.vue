@@ -1,13 +1,19 @@
 <template>
 <view class="ForumDetail">
 	<searchbar></searchbar>
-
-
+	<view class="header">
+		<image src="../../static/images/textImages/avatar.png"></image>
+		<view class="name">xxx吧</view>
+	</view>
+	<view class="rule" >
+		<view class="smalltitle">吧规</view>
+		<view class="content">xxxx</view> 
+	</view>
 	
 	<uni-section>
 		<uni-group v-for="(item,index) in HotPosts" :key="index">
 			<navigator url="/components/Post/index">
-				<view class="header">
+				<view class="tieba">
 					<image class="avatar" :src="item.avatar"></image>
 					<view class="info">
 						<view>{{item.username}}</view>
@@ -35,7 +41,7 @@ export default{
         return{
 			HotPosts:[
 					{
-						avatar:"@/static/images/textImages/avatar.png",
+						avatar:"../../static/images/textImages/avatar.png",
 						username: 'Qcsa',
 						title: '11',
 						publishDate: new Date(),
@@ -44,7 +50,7 @@ export default{
 						like: 30
 					},
 					{
-						avatar:"@/static/images/textImages/avatar.png",
+						avatar:"../../static/images/textImages/avatar.png",
 						username: 'xlssss',
 						title: 'ceashi',
 						publishDate: new Date(),
@@ -74,12 +80,41 @@ export default{
 @import "@/iconfont/iconfont-weapp-icon.css";
 @import "@/static/style/common.scss";
 .ForumDetail{
+	.header{
+		background-color: greenyellow;
+		border-radius: 5%;
+		height: 250rpx;
+		display:flex;
+		justify-content: left;
+		align-items: center;
+		image{
+			height: 100rpx;
+			width: 100rpx;
+			margin-left: 24rpx;
+			border-radius: 20%;
+		}
+		.name{
+			margin-left: 20rpx;
+		}
+	}
+	.rule{
+		border-radius: 20% 20% 0 0;
+		display: flex;
+		.smalltitle{
+			background-color: greenyellow;
+			font-size: small;
+			margin: 5rpx 20rpx 5rpx;
+		}
+		.content{
+			font-size: medium;
+		}
+	}
 	uni-section{
 		uni-group{
 			navigator{
 				font-size:24rpx;
 				align-items: center;
-				.header {
+				.tieba {
 					display: flex;
 					.avatar {
 					width: $avatarSize-small;

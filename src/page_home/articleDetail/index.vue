@@ -33,7 +33,7 @@ export default {
         showup2:true,
         showup3:true,
       articleDetail: {
-            avatar:"../../../static/images/textImages/avatar.png",
+            avatar:"../../static/images/textImages/avatar.png",
             name:"王俊杰",
             releaseTime:"2022-8-22",
             numberOfview: 222,
