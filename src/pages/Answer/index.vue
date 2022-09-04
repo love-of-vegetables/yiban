@@ -1,13 +1,14 @@
 <template>
   <view class="container">
-    <view class="search-bar-wrapper">
+    <view class="search-bar-wrapper" @click="goSearch">
       <uni-search-bar cancelButton="none"
                       clearButton="none"
                       v-model="keyword"
                       radius="50"
                       placeholder="输入关键词搜索"
                       bgColor="rgb(246,246,246)"
-                      class="search-bar">
+                      class="search-bar"
+                      >
       </uni-search-bar>
     </view>
     <view class="articles"
@@ -76,6 +77,15 @@ export default {
         url: '/components/Post/index',
         animationType: 'pop-in',
         animationDuration: 200
+      })
+    },
+    goSearch() {
+      uni.navigateTo({
+        // url:"./Search/index.vue",
+        url: '/components/search',
+
+        animationType: 'pop-in',
+        animationDuration: 200,
       })
     }
   }

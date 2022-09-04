@@ -1,29 +1,36 @@
 <template>
-<view class="Forum">
-	 <view @click="focus"><searchbar ></searchbar></view>
-	<uni-section title="我关注的">
-		<uni-group v-for="(item,index) in Post_List" :key="index" mode="card">
-			<navigator url="../../page_forum/ForumDetail/index">
-				<image mode="widthFix" :src="item.avatar"></image>
-				<view class="name">{{item.name}}吧</view>
-				<view class="numberOfattention">关注：{{item.numberOfattention}}</view>
-				<view class="TotalPosts">贴子：{{item.TotalPosts}}</view>  
-			</navigator>
-		</uni-group>
-	</uni-section>
+  <view class="Forum">
+    <view @click="focus"><searchbar></searchbar></view>
+    <uni-section title="我关注的">
+      <uni-group v-for="(item, index) in Post_List" :key="index" mode="card">
+        <navigator url="../../page_forum/ForumDetail/index">
+          <image mode="widthFix" :src="item.avatar"></image>
+          <view class="name">{{ item.name }}</view>
+          <view class="numberOfattention"
+            >关注：{{ item.numberOfattention }}</view
+          >
+          <view class="TotalPosts">贴子：{{ item.TotalPosts }}</view>
+        </navigator>
+      </uni-group>
+    </uni-section>
 
-	<uni-section title="近期浏览">
-		<uni-group v-for="(item,index) in Post_List_recent" :key="index" mode="card">
-			<navigator url="../../page_forum/ForumDetail/index">
-				<image mode="widthFix" :src="item.avatar"></image>
-				<view class="name">{{item.name}}吧</view>
-				<view class="numberOfattention">关注：{{item.numberOfattention}}</view>
-				<view class="TotalPosts">贴子：{{item.TotalPosts}}</view>  
-			</navigator>
-		</uni-group>
-	</uni-section>
-
-</view>
+    <uni-section title="近期浏览">
+      <uni-group
+        v-for="(item, index) in Post_List_recent"
+        :key="index"
+        mode="card"
+      >
+        <navigator url="../../page_forum/ForumDetail/index">
+          <image mode="widthFix" :src="item.avatar"></image>
+          <view class="name">{{ item.name }}</view>
+          <view class="numberOfattention"
+            >关注：{{ item.numberOfattention }}</view
+          >
+          <view class="TotalPosts">贴子：{{ item.TotalPosts }}</view>
+        </navigator>
+      </uni-group>
+    </uni-section>
+  </view>
 </template>
 
 <script>
@@ -58,13 +65,16 @@ export default{
       		}		
     },
 	methods:{
-		focus(){
-			uni.navigateTo({
-				url:"../../page_forum/Search/index",
-				animationType: 'pop-in',
-        		animationDuration: 200
-			})
-		},
+		focus() {
+      console.log('2')
+      uni.navigateTo({
+        // url:"./Search/index.vue",
+        url: '/components/search',
+
+        animationType: 'pop-in',
+        animationDuration: 200,
+      })
+    },
 		getDateFrom (date) {
       		return getDate(date)
     	}
@@ -75,28 +85,27 @@ export default{
 <style lang="scss" scoped>
 // @import "@/iconfont/iconfont-weapp-icon.css";
 // @import "@/static/style/common.scss";
-.Forum{
-	uni-section{
-		uni-group{
-			navigator{
-				font-size:24rpx;
-				align-items: center;
-				display: flex;
-				image{
-					width: 50rpx;
-				}
-				}
-				.name{
-					margin-left: 20rpx;
-				}
-				.numberOfattention{
-					margin-left: 20rpx;
-				}
-				.TotalPosts{
-					margin-left: 20rpx;
-				}
-			}
-		}
-	}
+.Forum {
+  uni-section {
+    uni-group {
+      navigator {
+        font-size: 24rpx;
+        align-items: center;
+        display: flex;
+        image {
+          width: 50rpx;
+        }
+      }
+      .name {
+        margin-left: 20rpx;
+      }
+      .numberOfattention {
+        margin-left: 20rpx;
+      }
+      .TotalPosts {
+        margin-left: 20rpx;
+      }
+    }
+  }
+}
 </style>
-
