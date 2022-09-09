@@ -51,6 +51,9 @@
 	export default{
 		data(){
 			return{
+		params:{
+			limit:2
+		},
         coverList:[
 					{
 						src: "../../static/images/swiper/1.jpg"
@@ -115,12 +118,14 @@
 					}
        ],
 		}
-	}
+	},
 	/*mounted(){
 		uni.request({
-			url: "http://43.143.33.55:443/articles/hot",
-		}).then(result =>{
-			console.log(result);
+			url: "https://www.yiban2209.press/articles/hot" ,
+			method:"POST",
+			data:{limit:2}
+		}).then(result =>{``
+			console.log(result) 
 		})
 	}*/
 }
