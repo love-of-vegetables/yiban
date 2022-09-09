@@ -3,10 +3,10 @@
     <view class="myLike-wrapper">
       <view class="myLike" v-for="(myLike, index) in myLikes" :key="index">
         <view class="head">
-          <view>{{myLike.title}}</view>
-           <view><text class="t-icon t-icon-shanchu"></text></view>
+          <view>{{ myLike.title }}</view>
+          <view><text class="t-icon t-icon-shanchu"></text></view>
         </view>
-        <view class="body">{{myLike.content}}</view>
+        <view class="body">{{ myLike.content }}</view>
       </view>
     </view>
   </view>
@@ -25,34 +25,29 @@ export default {
           content: '这是个用来测试的帖子',
           comment: ['11', '22'],
           like: 10,
-          type: '1'
-        }
-      ]
+          type: '1',
+        },
+      ],
     }
   },
   components: {
-    uniIcons
+    uniIcons,
   },
   methods: {
-    editmyLike(id) {
-
-    },
-    deletemyLike(id) {
-
-    },
+    editmyLike(id) {},
+    deletemyLike(id) {},
     getDateFrom(date) {
       return getDate(date)
-    }
-  }
+    },
+  },
 }
-
 </script>
 
-<style lang='scss' scoped>
-@import "@/iconfont/iconfont-weapp-icon.css";
+<style lang="scss" scoped>
+@import '@/iconfont/iconfont-weapp-icon.css';
 .contain {
   .myLike-wrapper {
-      box-shadow: 0 3rpx 4rpx 6rpx rgba(211, 211, 211, 0.4);
+    box-shadow: 0 3rpx 4rpx 6rpx rgba(211, 211, 211, 0.4);
     .myLike {
       padding: 20rpx 20rpx 30rpx;
       border-bottom: 1px solid rgba(211, 211, 211, 0.3);
