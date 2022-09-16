@@ -81,7 +81,7 @@ export default {
       uni.getUserProfile({
         desc: '获取用户基本资料',
         success: (res) => {
-          // console.log(res);
+          console.log(res);
           this.userInfo = res.userInfo
           this.isLogin = true
         },

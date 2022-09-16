@@ -58,86 +58,86 @@
 </template>
 
 <script>
-	export default{
-		data(){
-			return{
-		params:{
-			limit:2
-		},
-        coverList:[
-					{
-						src: "../../static/images/swiper/1.jpg"
-					},
-					{
-						src: "../../static/images/swiper/2.jpg"
-					},
-					{
-						src: "../../static/images/swiper/3.jpg"
-					}
-				],
-		article_List:[
-					{
-						url: "../../static/images/article/article1.png",
-						name: "口协招新",
-						description: "华山运动场8号摊位晚上19:00"
-					},
-					{	
-						url: "../../static/images/article/article2.png",
-						name: "成绩录入最后一天",
-						description: "根据教务处通知，7月17号（今天）就是教师录入成绩的截止时间了"
-					}
-				],
-		bigTypeRow_1:[
-					{
-						id: 0,
-						url: "../../static/images/bigType/xuexiao.png",
-						name:"学校",
-						nexturl:"../../page_home/differentKinds/index"
-					},
-					{
-						id: 1,
-						url: "../../static/images/bigType/xueyuan.png",
-						name:"学院",
-						nexturl:"../../page_home/differentKinds/index"
-					},
-					{
-						id: 2,
-						url: "../../static/images/bigType/zuzhi.png",
-						name:"组织",
-						nexturl:"../../page_home/differentKinds/index"
-					}
-				],
-		bigTypeRow_2:[
-					{
-						id: 0,
-						url: "../../static/images/bigType/shetuan.png",
-						name:"社团",
-						nexturl:"../../page_home/differentKinds/index"
-					},
-					{
-						id: 1,
-						url: "../../static/images/bigType/zongce.png",
-						name:"综测",
-						nexturl:"../../page_home/differentKinds/index"
-					},
-					{
-						id: 2,
-						url: "../../static/images/bigType/yiqing.png",
-						name:"疫情",
-						nexturl:"../../page_home/differentKinds/index"
-					}
-       ],
-		}
-	},
-	/*mounted(){
-		uni.request({
-			url: "https://www.yiban2209.press/articles/hot" ,
-			method:"POST",
-			data:{limit:2}
-		}).then(result =>{``
-			console.log(result) 
-		})
-	}*/
+export default {
+  data() {
+    return {
+      params: {
+        limit: 2,
+      },
+      coverList: [
+        {
+          src: '../../static/images/swiper/1.jpg',
+        },
+        {
+          src: '../../static/images/swiper/2.jpg',
+        },
+        {
+          src: '../../static/images/swiper/3.jpg',
+        },
+      ],
+      article_List: [
+        {
+          url: '../../static/images/article/article1.png',
+          name: '口协招新',
+          description: '华山运动场8号摊位晚上19:00',
+        },
+        {
+          url: '../../static/images/article/article2.png',
+          name: '成绩录入最后一天',
+          description:
+            '根据教务处通知，7月17号（今天）就是教师录入成绩的截止时间了',
+        },
+      ],
+      bigTypeRow_1: [
+        {
+          id: 0,
+          url: '../../static/images/bigType/xuexiao.png',
+          name: '学校',
+          nexturl: '../../page_home/differentKinds/index',
+        },
+        {
+          id: 1,
+          url: '../../static/images/bigType/xueyuan.png',
+          name: '学院',
+          nexturl: '../../page_home/differentKinds/index',
+        },
+        {
+          id: 2,
+          url: '../../static/images/bigType/zuzhi.png',
+          name: '组织',
+          nexturl: '../../page_home/differentKinds/index',
+        },
+      ],
+      bigTypeRow_2: [
+        {
+          id: 0,
+          url: '../../static/images/bigType/shetuan.png',
+          name: '社团',
+          nexturl: '../../page_home/differentKinds/index',
+        },
+        {
+          id: 1,
+          url: '../../static/images/bigType/zongce.png',
+          name: '综测',
+          nexturl: '../../page_home/differentKinds/index',
+        },
+        {
+          id: 2,
+          url: '../../static/images/bigType/yiqing.png',
+          name: '疫情',
+          nexturl: '../../page_home/differentKinds/index',
+        },
+      ],
+    }
+  },
+  mounted() {
+    const db = wx.cloud.database()
+    const good = db.collection('goods')
+    good.get().then(res => {
+      console.log(res);
+    })
+    console.log('home mounted');
+  },
 }
 </script>
 
