@@ -130,14 +130,6 @@ export default {
       ],
     }
   },
-  mounted() {
-    const db = wx.cloud.database()
-    const good = db.collection('goods')
-    good.get().then(res => {
-      console.log(res);
-    })
-    console.log('home mounted');
-  },
 }
 </script>
 
