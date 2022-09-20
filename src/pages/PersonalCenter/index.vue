@@ -59,22 +59,6 @@ export default {
   components: {
     uniIcons,
   },
-  mounted() {
-    this.$api({
-      header: {
-        'content-type': 'application/json',
-      },
-      url: '/articles/view',
-      // url: '/categories',
-      method: 'POST',
-      // method: 'GET',
-      data: {
-        id: 1
-      },
-    }).then((res) => {
-      console.log(res)
-    })
-  },
   methods: {
     toLogin() {
       // 获取code 小程序专有，用户登录凭证。

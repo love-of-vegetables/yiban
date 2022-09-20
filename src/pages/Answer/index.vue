@@ -1,40 +1,56 @@
 <template>
   <view class="container">
     <view class="search-bar-wrapper" @click="goSearch">
-      <uni-search-bar cancelButton="none"
-                      clearButton="none"
-                      v-model="keyword"
-                      radius="50"
-                      placeholder="输入关键词搜索"
-                      bgColor="rgb(246,246,246)"
-                      class="search-bar"
-                      >
+      <uni-search-bar
+        cancelButton="none"
+        clearButton="none"
+        v-model="keyword"
+        radius="50"
+        placeholder="输入关键词搜索"
+        bgColor="rgb(246,246,246)"
+        class="search-bar"
+      >
       </uni-search-bar>
     </view>
-    <view class="articles"
-          v-for="(item, index) in articles"
-          :key="index"
-          @click="goInto(item.id)">
+    <view
+      class="articles"
+      v-for="(item, index) in articles"
+      :key="index"
+      @click="goInto(item.id)"
+    >
       <view class="header">
-        <image class="avatar"
-               src="~@/static/images/textImages/avatar.png"></image>
+        <image
+          class="avatar"
+          src="~@/static/images/textImages/avatar.png"
+        ></image>
         <view class="header-right">
-          <view class="author">{{item.author}}</view>
-          <view class="publishDate">{{getDateFrom(item.publishDate)}}</view>
+          <view class="author">{{ item.postbarid ? item.postbarid : item.postbar }}</view>
+          <view class="publishDate">{{getDateFrom(item.updatetime)}}</view>
         </view>
       </view>
-      <view class="content">{{item.content}}</view>
+      <view class="content">{{ item.summary }}</view>
       <view class="footer">
-        <view class="footer-item"><text class="t-icon t-icon-fenxiang1 icon"></text><text>{{item.share}}</text></view>
-        <view class="footer-item"><text class="t-icon t-icon-pinglun icon"></text><text>{{item.comment}}</text></view>
-        <view class="footer-item"><text class="t-icon t-icon-zan icon"></text><text>{{item.like}}</text></view>
+        <view class="footer-item"
+          ><text class="t-icon t-icon-fenxiang1 icon"></text
+          ><text>{{ item.transmitcounts }}</text></view
+        >
+        <view class="footer-item"
+          ><text class="t-icon t-icon-pinglun icon"></text
+          ><text>{{ item.commentcounts }}</text></view
+        >
+        <view class="footer-item"
+          ><text class="t-icon t-icon-zan icon"></text
+          ><text>{{ item.likecounts }}</text></view
+        >
       </view>
     </view>
     <view class="edit">
-      <uni-icons type="plusempty"
-                 size="40"
-                 class="editIcon"
-                 @click="gotoEdit"></uni-icons>
+      <uni-icons
+        type="plusempty"
+        size="40"
+        class="editIcon"
+        @click="gotoEdit"
+      ></uni-icons>
     </view>
   </view>
 </template>
@@ -42,41 +58,45 @@
 <script>
 import { getDate } from '@/utils/getDate.js'
 export default {
-  data () {
+  data() {
     return {
       keyword: '',
-      articles: [
-        {
-          id: 1,
-          author: 'Qcsa',
-          publishDate: new Date(),
-          content: '内容区',
-          share: 10,
-          comment: 112,
-          like: 98
-        }
-      ]
+      articles: []
     }
   },
+  mounted() {
+    const db = wx.cloud.database()
+    const post = db.collection('post')
+    post.get().then(res => {
+      this.articles = res.data.map(item => {
+        return {
+          ...item.postdata,
+          ...item.post,
+          updatetime: item.updatetime
+        }
+      })
+      console.log(this.articles)
+    })
+  },
   methods: {
-    input (res) {
+    input(res) {
       console.log('----input:', res)
     },
-    getDateFrom (date) {
+    getDateFrom(date) {
       return getDate(date)
     },
-    gotoEdit () {
+    gotoEdit() {
       uni.navigateTo({
         url: '/page_answer/edit/index',
         animationType: 'pop-in',
-        animationDuration: 200
+        animationDuration: 200,
       })
     },
-    goInto (id) {
+    goInto(id) {
       uni.navigateTo({
         url: '/components/Post/index',
         animationType: 'pop-in',
-        animationDuration: 200
+        animationDuration: 200,
       })
     },
     goSearch() {
@@ -87,14 +107,14 @@ export default {
         animationType: 'pop-in',
         animationDuration: 200,
       })
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "@/iconfont/iconfont-weapp-icon.css";
-@import "@/static/style/common.scss";
+@import '@/iconfont/iconfont-weapp-icon.css';
+@import '@/static/style/common.scss';
 .container {
   position: relative;
   .search-bar-wrapper {
